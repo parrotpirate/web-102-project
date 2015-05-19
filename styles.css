@@ -1,0 +1,51 @@
+.container{
+	margin: 0 auto;
+	width: 960px;
+}
+
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+	background-color: #ef672f;
+	box-shadow: 2px 2px 30px #000;
+}
+
+header .logo{
+	float: left;
+}
+
+header nav{
+	float: left;
+}
+
+header nav ul{
+  /*List style reset*/
+	margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+header nav ul li{
+  float: left;
+}
+
+header nav ul li:hover{
+  background-color: #31302b;
+}
+
+header nav ul li a{
+  display: block;
+  padding: 38px;
+  padding-bottom: 39px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#content{
+  padding-top: 150px;
+}
