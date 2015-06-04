@@ -46,6 +46,59 @@ header nav ul li a{
   text-decoration: none;
 }
 
+footer{
+  width: 100%;
+  height: 75px;
+  background-color: #31302b;
+  padding-top: 30px;
+  box-shadow: -2px -2px 30px #000;
+}
+
+footer p{
+  color: white;
+  font-weight: bold;
+  text-align: center;
+
+}
+
 #content{
   padding-top: 150px;
 }
+
+section{
+  margin-bottom: 50px;
+}
+
+.event{
+  display: inline-block;
+  margin-right: 25px;
+}
+
+.event.last{
+  margin-right: 0px;
+}
+
+.upcoming_news {
+  overflow: auto;
+}
+
+.upcoming_news .news {
+  float: left;
+  width: 50%;
+  /*causes element to scale inward*/
+  box-sizing: border-box;
+}
+
+.upcoming_news .news.right{
+  padding-left: 30px;
+  max-height: 300px;
+  /*can target specifically x or y axis*/
+  overflow-y: auto;
+}
+
+.upcoming_news .news.right h3{
+  margin-top: 0;
+}
+
+
+
