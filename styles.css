@@ -28,9 +28,32 @@ header nav ul{
   list-style-type: none;
 }
 
-header nav ul li{
+/*target only top level nav items*/
+header nav #main-nav > li{
   float: left;
+  position: relative;
 }
+
+/*dropdown functionality*/
+header nav ul.dropdown{
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  background-color: #31302b;
+}
+
+header nav li.has-dropdown:hover > ul.dropdown{
+  display: block;
+}
+/*end dropdown functionality*/
+
+/*color dropdown items*/
+header nav ul.dropdown li:hover{
+  background-color: #bbb;
+}
+/*end color dropdown*/
 
 header nav ul li:hover{
   background-color: #31302b;
