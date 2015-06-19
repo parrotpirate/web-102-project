@@ -11,6 +11,7 @@ header{
 	height: 100px;
 	background-color: #ef672f;
 	box-shadow: 2px 2px 30px #000;
+  z-index: 100;
 }
 
 header .logo{
@@ -36,16 +37,21 @@ header nav #main-nav > li{
 
 /*dropdown functionality*/
 header nav ul.dropdown{
-  display: none;
+  /*display: none;*/
+  opacity: 0;
   position: absolute;
+  margin-top: -99999px;
   top: 100px;
   left: 0;
   width: 100%;
   background-color: #31302b;
+  transition: opacity 0.4s ease-in-out;
 }
 
 header nav li.has-dropdown:hover > ul.dropdown{
-  display: block;
+  /*display: block;*/
+  opacity: 1;
+  margin-top: 0px;
 }
 /*end dropdown functionality*/
 
@@ -54,6 +60,10 @@ header nav ul.dropdown li:hover{
   background-color: #bbb;
 }
 /*end color dropdown*/
+
+header nav ul li{
+  transition: background-color 0.3s ease-in-out ;
+}
 
 header nav ul li:hover{
   background-color: #31302b;
@@ -94,12 +104,41 @@ section{
 
 .event{
   display: inline-block;
+  position: relative;
   margin-right: 25px;
 }
 
 .event.last{
   margin-right: 0px;
 }
+
+.event .overlay{
+  position: absolute;
+  background-color: rgba(0,0,0,0.7);
+
+}
+
+.event .overlay.left_to_right{
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 350px;
+  transition: width 0.5s ease-in-out;
+}
+
+.event:hover .overlay.left_to_right{
+  width: 100%;
+}
+
+.event .overlay.right_to_left{
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 350px;
+  transition: width 0.5s ease-in-out;
+}
+
+
 
 .upcoming_news {
   overflow: auto;
@@ -123,5 +162,25 @@ section{
   margin-top: 0;
 }
 
+#footer_banner{
+  position: relative;
+}
+
+.circle-container{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.circle{
+  border-radius: 100%;
+  margin-right: 20px;
+  box-shadow: 3px 3px 20px white;
+  transition: transform 0.1s ease-in-out;
+}
+
+.circle:hover{
+  transform: scale(1.2);
+}
 
 
