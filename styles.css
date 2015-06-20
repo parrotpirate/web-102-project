@@ -112,33 +112,62 @@ section{
   margin-right: 0px;
 }
 
-.event .overlay{
-  position: absolute;
-  background-color: rgba(0,0,0,0.7);
-
-}
-
-.event .overlay.left_to_right{
-  top: 0;
-  left: 0;
+/*EVENT OVERLAY FUNCTIONALITY*/
+.overlay{
   width: 0;
   height: 350px;
-  transition: width 0.5s ease-in-out;
+  position: absolute;
+  background-color: black;
+  opacity: .4;
+  transition: all .5s ease-in-out;
 }
 
-.event:hover .overlay.left_to_right{
+.event:hover .overlay{
+  width: 300px;
+}
+
+.event .overlay.right-to-left{
+  right: 0;
+}
+
+.events .event:nth-child(2):hover .overlay.right-to-left{
+  width: 300px;
+}
+
+.event .overlay.down-to-up{
+  bottom: 0;
+  height: 0;
   width: 100%;
 }
 
-.event .overlay.right_to_left{
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 350px;
-  transition: width 0.5s ease-in-out;
+.events .event:nth-child(3):hover .overlay.down-to-up{
+  height: 50%;
 }
 
+.events .event .overlay.up-to-down{
+  height: 0;
+  width: 100%;
+}
 
+.events .event:nth-child(4):hover .overlay.up-to-down {
+  height: 50%;
+}
+
+.events .event .overlay.scale{
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  transform: scale(none);
+}
+
+.events .event:nth-child(5):hover .overlay.scale {
+  opacity: .4;
+  transform: scale(300,350);
+}
+
+/*END EVENT OVERLAY*/
 
 .upcoming_news {
   overflow: auto;
