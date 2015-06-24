@@ -113,58 +113,95 @@ section{
 }
 
 /*EVENT OVERLAY FUNCTIONALITY*/
-.overlay{
-  width: 0;
-  height: 350px;
+.overlay {
   position: absolute;
-  background-color: black;
-  opacity: .4;
-  transition: all .5s ease-in-out;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  font-weight: bold;
 }
 
-.event:hover .overlay{
-  width: 300px;
+.overlay.left-to-right{
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease-in-out;
 }
 
-.event .overlay.right-to-left{
+.event:hover > .overlay.left-to-right{
+  width: 100%;
+}
+
+.overlay.right-to-left{
+  top: 0;
   right: 0;
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease-in-out;
 }
 
-.events .event:nth-child(2):hover .overlay.right-to-left{
-  width: 300px;
+.event:hover > .overlay.right-to-left{
+  width: 100%;
 }
 
-.event .overlay.down-to-up{
+.overlay.bottom-to-top{
   bottom: 0;
+  left: 0;
   height: 0;
   width: 100%;
+  transition: height .3s ease-in-out;
 }
 
-.events .event:nth-child(3):hover .overlay.down-to-up{
+.event:hover > .overlay.bottom-to-top{
+  height: 100%;
+}
+
+.overlay.half-bottom-to-top{
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  transition: height .3s ease-in-out;
+}
+
+.event:hover > .overlay.half-bottom-to-top{
   height: 50%;
 }
 
-.events .event .overlay.up-to-down{
-  height: 0;
+.overlay.rotate{
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transform: rotate(180deg);
+  transition: width .3s ease-in-out, transform .3s ease-in-out;
+}
+
+.event:hover > .rotate{
   width: 100%;
+  transform: rotate(360deg);
 }
 
-.events .event:nth-child(4):hover .overlay.up-to-down {
-  height: 50%;
+.overlay.expand-from-center{
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: scale(0);
+  transition: transform .3s ease-in-out;
 }
 
-.events .event .overlay.scale{
+.event:hover > .overlay.expand-from-center{
+  transform: scale(1);
+}
+
+.overlay p{
+  text-align: center;
+  /*VERTICALLY ALIGN ELEMENT*/
+  position: relative;
   top: 50%;
-  left: 50%;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  transform: scale(none);
-}
-
-.events .event:nth-child(5):hover .overlay.scale {
-  opacity: .4;
-  transform: scale(300,350);
+  transform: translateY(-50%);
 }
 
 /*END EVENT OVERLAY*/
